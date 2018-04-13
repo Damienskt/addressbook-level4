@@ -23,8 +23,8 @@ public class GoogleWebServices {
             + "please wait till 3pm SGT for it to be reset";
 
     private static GeoApiContext context;
-    private String [] apiKeys;
-    private boolean isInitialised;
+    private static String [] apiKeys;
+    private static boolean isInitialised;
 
     /**
      * Initialises access to google server using Api keys
@@ -43,13 +43,13 @@ public class GoogleWebServices {
     /**
      * Initialise with valid Api key and test connection to google server
      */
-    private void initialiseConnection() {
+    private static void initialiseConnection() {
         for (int i = 0; i < 5; i++) {
             isInitialised = true;
-            context = new GeoApiContext.Builder()
-                    .apiKey(apiKeys[i])
-                    .build();
             try {
+                context = new GeoApiContext.Builder()
+                        .apiKey(apiKeys[i])
+                        .build();
                 GeocodingResult[] results = GeocodingApi.geocode(context,
                         "Punggol").await();
                 LatLng location = results[0].geometry.location;
@@ -67,6 +67,7 @@ public class GoogleWebServices {
     }
 
     public static GeoApiContext getGeoApiContext() {
+        initialiseConnection();
         return context;
     }
 }
