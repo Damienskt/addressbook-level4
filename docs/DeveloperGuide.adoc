@@ -2021,13 +2021,6 @@ This section includes instructions to test the estimateRoute command of the appl
    _Expected: Error details shown in the result display. Status bar remains the same. Map removes any existing marker or route._
 .. Type other incorrect  command such as `estimateRoute`, `estimateRoute Punggol NUS`, `estimateRoute sma/Punggol NUS`, `estimateRoute NUS ema/Punggol` in command box and press enter +
    _Expected: Similar to previous._
-////
-=== Saving data
-
-. Dealing with missing/corrupted data files
-
-.. _{explain how to simulate a missing/corrupted file and the expected behavior}_
-////
 === Viewing a celebrity's calendar
 This section includes instructions to test the `viewCalendar` command of the application.
 [NOTE]
@@ -2095,3 +2088,10 @@ Prerequisites: Calendar is currently in `day` view and displays the current day'
    _Expected: No change in calendar. Error details shown in the status message._
 .. Type other incorrect `viewDate` commands such as `viewDate`, `viewDate x` (where `x` is not a date in `DD-MM-YYYY` or `DD-MM` format) in command box and press enter +
    _Expected: No change in calendar. Error details shown in the status message._
+////
+=== Saving data
+
+. Dealing with missing/corrupted data files
+
+.. _{explain how to simulate a missing/corrupted file and the expected behavior}_
+////
